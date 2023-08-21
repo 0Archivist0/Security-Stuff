@@ -1,8 +1,12 @@
 #!/bin/bash
+# Author: Kris Tomplait
+# Use & purpose: Seeks out files containing Tofsee malware and takes action to remove them.
+# Use at your own risk
 
 # Function to search for files containing Tofsee malware
 search_malware() {
     # Search the file system for files containing Tofsee malware
+    echo "Searching for files containing Tofsee malware..."
     result=$(sudo find / -type f -exec grep -l "8121b07538fee52be986b858770edf3ba65724d1bc778fee35f0f3ca821c42b0" {} + 2>/dev/null)
 
     # If files are found, print the result and their locations
@@ -27,6 +31,7 @@ prompt_user() {
             # Delete all files containing Tofsee malware
             for file in $result; do
                 if [ -f "$file" ]; then
+                    echo "Deleting: $file"
                     sudo rm -f "$file"
                     echo "Deleted: $file"
                 else
