@@ -2,7 +2,14 @@
 # Author: Kris Tomplait
 # Use & purpose: Seeks out files containing Tofsee malware and takes action to remove them.
 # Use at your own risk
+# -------------------------------------------------------------------------------------------------------------------------
+# 8-22-23 Update 02:19 
+# this script was tested a few times, but in the end, I ended up just whiping the OS and installing another after shredding the 
+# file system and reformatting & re-partitioning the HDD....
 
+# so.... Use at your own risk as always...
+
+# ------------------------------------------------------------------------------------------------------------------------
 # Function to search for files containing Tofsee malware
 search_malware() {
     # Search the file system for files containing Tofsee malware
